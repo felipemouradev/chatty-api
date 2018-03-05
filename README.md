@@ -17,7 +17,7 @@ mongodb://username:password@host:port/chatty
 _Obs³:_ O banco é criado automaticamente a medida que dados vão sendo inseridos usando o NODE_ENV como sufixo, 
 caso não tenha NODE_ENV, não tem problema o default e _dev, você pode conferir mais sobre isso em config/config.js
 
-_Obs Final_: Troquei o .yml do swagger para a url: localhost:3000, então só dar o **make publish-documentation** 
+_Obs Final_: Troquei o .yaml do swagger para a url: localhost:3000, então só dar o **make publish-documentation** 
 dentro da raiz do projeto
 
 
