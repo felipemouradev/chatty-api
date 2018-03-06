@@ -18,7 +18,7 @@ _Obs³:_ O banco é criado automaticamente a medida que dados vão sendo inserid
 caso não tenha NODE_ENV, não tem problema o default e _dev, você pode conferir mais sobre isso em config/config.js
 
 _Obs Final_: Troquei o .yaml do swagger para a url: localhost:3000, então só dar o **make publish-documentation** 
-dentro da raiz do projeto
+dentro da raiz do projeto.
 
 
 **Instalando o projeto:**
@@ -26,5 +26,12 @@ dentro da raiz do projeto
 - faça o clone do projeto e entre na pasta dele
 - npm install
 - node app.js
-
 Feito! Estará rodando na porta 3000
+
+
+**Rodando Testes**
+```
+mocha --timeout 2000 --exit 
+```
+
+
