@@ -30,6 +30,8 @@ Feito! Estará rodando na porta 3000
 
 
 **Rodando Testes**
+
+Caso queira testar basta instalar o mocha, caso não tenha ainda em sua maquina, **npm install mocha -g**
 ```
 mocha --timeout 2000 --exit 
 ```
