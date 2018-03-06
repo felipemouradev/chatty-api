@@ -1,7 +1,6 @@
 const _ = require('lodash');
 
 const HandleErrorService = (error, detail = null, status = null) => {
-  console.log("ERROR: ",error);
   let objectError = {
     "type": "UnexpectedError.",
     "title": "Unexpected Error.",
