@@ -18,7 +18,7 @@ const config = {
     app: {
       name: 'foodsAndFriends_test'
     },
-    port: process.env.PORT || 3000,
+    port: 3009,
     db: 'mongodb://localhost/chatty_test'
   },
 
