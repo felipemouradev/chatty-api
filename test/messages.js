@@ -116,7 +116,7 @@ describe('Tests of Messages', () => {
       });
   });
 
-  it('Should not create new message, genos not budget', (done) => {
+  it('Should not create new message, user without budget', (done) => {
     //invalid username
     let user = {
       "from": boros._id,
