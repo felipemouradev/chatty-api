@@ -11,7 +11,7 @@ const MessageSchema = new Schema({
     type: String,
     required: [true, messageInvalidParameters],
     validate: {
-      validator: (v) => v.length < 1 && v.length > 280,
+      validator: (v) => v.length > 1 && v.length <= 280,
       message: messageInvalidParameters
     }
   },
