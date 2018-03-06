@@ -11,28 +11,26 @@ class MessageController extends BaseController {
   }
 
   async findMessagesByTo(req, res, next) {
-    console.log(req.query);
     if(!req.query.to)
       return this.Response(res, this.HandleError(null, 'The request is missing required attributes.',400));
 
-    const userTo = await UserService.getUser(req.query.to);
-    if(userTo) {
-      const messages = await Message.find({to: userTo._id});
+    const recipient = await UserService.getUser(req.query.to);
+    if(recipient) {
+      const messages = await Message.find({to: recipient._id});
       return this.Response(res, null, {messages: messages}, 200);
     }
     return this.Response(res, this.HandleError(null, 'The user does not exist.',404));
   }
 
   async saveMessage(req, res, next) {
-    const userTo = await UserService.getUser(req.body.to);
-    const userFrom = await UserService.getUser(req.body.from);
+    const recipient = await UserService.getUser(req.body.to);
+    const sender = await UserService.getUser(req.body.from);
 
-    if(userFrom && userTo) {
-      if(await UserService.checkUserBudgetAvailable(userFrom)) {
+    if(sender && recipient) {
+      if(await UserService.checkUserBudgetAvailable(recipient)) {
         return await this._save(req, res, next, ()=> {},
           async (message) => {
-            console.log("message: ",message);
-            message ? await UserService.budgetDeduct(userFrom) : null;
+            message ? await UserService.budgetDeduct(recipient) : null;
           });
       }
       return this.Response(res, this.HandleError(null, 'User not allowed to send, insufficient budget.'));
