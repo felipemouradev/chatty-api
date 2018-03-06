@@ -14,7 +14,6 @@ const UserService =  {
 
   budgetDeduct: async (user) => {
     user.budget = user.budget-1;
-    console.log(user.budget);
     return await user.save();
   }
 };
